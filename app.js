@@ -5,6 +5,30 @@ console.log("\nSECTION 1 - A Quick Overview of Async Functions");
 // Example 2 -  The Async Keyword
 console.log("\nSECTION 2 - The Async Keyword");
 
+async function greet() {
+  return "Hello!";
+}
+greet().then((val) => {
+  console.log("Promise resolved with: ", val);
+});
+
+async function add(x, y) {
+  if (typeof x !== "number" || typeof y !== "number") {
+    throw "x and y must be numbers!";
+  }
+  return x + y;
+}
+console.log(add("e", 5));
+console.log(add(6, 5));
+
+add(6, 7)
+  .then((val) => {
+    console.log("Promise resolved with: ", val);
+  })
+  .catch((err) => {
+    console.log("Promise rejected with: ", err);
+  });
+
 // Example 3 -  The Await Keyword
 console.log("\nSECTION 3 - The Await Keyword");
 
