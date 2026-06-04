@@ -32,14 +32,28 @@ add(6, 7)
 // Example 3 -  The Await Keyword
 console.log("\nSECTION 3 - The Await Keyword");
 
-async function getPlanets() {
-  const res = await axios.get("https://swapi.info/api/planets");
-  console.log(res.data);
-}
-getPlanets();
+//async function getPlanets() {
+//  const res = await axios.get("https://swapi.info/api/planets999");
+//  console.log(res.data);
+//}
+//getPlanets().catch((err) => {
+//  console.log("In Catch");
+//  console.log(err);
+//});
 
 // Example 4 -  Error Handling in Async Functions
 console.log("\nSECTION 4 - Error Handling in Async Functions");
+
+async function getPlanets() {
+  try {
+    const res = await axios.get("https://swapi.info/api/planets");
+    console.log(res.data);
+  } catch (e) {
+    console.log("In Catch!");
+    console.log(e);
+  }
+}
+getPlanets();
 
 // Example 5 -  Multiple Awaits
 console.log("\nSECTION 5 - Multiple Awaits");
