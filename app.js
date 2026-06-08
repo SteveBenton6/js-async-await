@@ -120,3 +120,19 @@ get3Pokemon();
 
 // Example 7 -  Refactoring with Promise.all
 console.log("\nSECTION 7 - Refactoring with Promise.all");
+
+async function get4Pokemon() {
+  const prom1 = axios.get("https://pokeapi.co/api/v2/pokemon/1");
+  const prom2 = axios.get("https://pokeapi.co/api/v2/pokemon/2");
+  const prom3 = axios.get("https://pokeapi.co/api/v2/pokemon/3");
+  const prom4 = axios.get("https://pokeapi.co/api/v2/pokemon/4");
+  const results = await Promise.all([prom1, prom2, prom3, prom4]);
+  printPokemon(results);
+}
+function printPokemon(results) {
+  for (let pokemon of results) {
+    console.log(pokemon.data.name);
+    console.log(pokemon.data);
+  }
+}
+get4Pokemon();
